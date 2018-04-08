@@ -1,14 +1,9 @@
 <?php 
-
-    if(isset($_POST['loginButton'])) {
-        echo "Login button was pressed!";
-    }
-    if(isset($_POST['registerButton'])) {
-        echo "Register button was pressed!";
-    }
-
+    include('includes/classes/Account.php');
+    $account = new Account();
+    include('includes/handlers/register-handler.php');
+    include('includes/handlers/login-handler.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,12 +24,12 @@
         <form id="loginForm" action="register.php" method="POST">
             <h2>Login to your account</h2>
             <p>
-                <label for="loginUserName">Login User Name:</label>
+                <label for="loginUserName">User Name:</label>
                 <input type="text" id="loginUserName" name="loginUserName">
             </p>
             <p>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password">
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="loginPassword">
             </p>
             <button type="submit" name="loginButton">Log In</button>
         </form>
@@ -46,28 +41,28 @@
                 <input type="text" id="registerUserName" name="registerUserName">
             </p>
             <p>
-                <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" name="firstName">
+                <label for="registerFirstName">First Name:</label>
+                <input type="text" id="registerFirstName" name="registerFirstName">
             </p>
             <p>
-                <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" name="lastName">
+                <label for="registerLastName">Last Name:</label>
+                <input type="text" id="registerLastName" name="registerLastName">
             </p>
             <p>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
+                <label for="registerEmail">Email:</label>
+                <input type="email" id="registerEmail" name="registerEmail">
             </p>
             <p>
-                <label for="emailConfirm">Email Confirmation:</label>
-                <input type="email" id="emailConfirm" name="emailConfirm">
+                <label for="registerEmailConfirm">Email Confirmation:</label>
+                <input type="email" id="registerEmailConfirm" name="registerEmailConfirm">
             </p>
             <p>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password">
+                <label for="registerPassword">Password:</label>
+                <input type="password" id="registerPassword" name="registerPassword">
             </p>
             <p>
-                <label for="passwordConfirm">Password Confirmation:</label>
-                <input type="password" id="passwordConfirm" name="passwordConfirm">
+                <label for="registerPasswordConfirm">Password Confirmation:</label>
+                <input type="password" id="registerPasswordConfirm" name="registerPasswordConfirm">
             </p>
             <button type="submit" name="registerButton">Register</button>
         </form>
